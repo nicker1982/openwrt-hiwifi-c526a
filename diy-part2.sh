@@ -12,3 +12,8 @@
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
+#golang版本过低
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+#缺少libopenssl-legacy依赖：
+sed -i 's/ +libopenssl-legacy//g' feeds/small/shadowsocksr-libev/Makefile
