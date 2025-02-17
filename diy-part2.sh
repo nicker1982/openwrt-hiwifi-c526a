@@ -17,7 +17,3 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 #缺少libopenssl-legacy依赖：
 sed -i 's/ +libopenssl-legacy//g' feeds/small/shadowsocksr-libev/Makefile
-#指定内核版本5.4
-sed -i "s/KERNEL_PATCHVER:=*.*/KERNEL_PATCHVER:=5.4/g" lede/target/linux/x86/Makefile
-
-sed -i "s/KERNEL_TESTING_PATCHVER:=*.*/KERNEL_TESTING_PATCHVER:=5.4/g" lede/target/linux/x86/Makefile
